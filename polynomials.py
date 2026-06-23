@@ -28,6 +28,7 @@ def multiply_vectors(a, b, index_matrix, coeff_matrix, GF):
     return res
 
 def power_vector(v, exp, index_matrix, coeff_matrix, GF):
+    """Быстрое возведение в степень (бинарный алгоритм)."""
     result = None
     base = v[:]
     n = exp
@@ -36,6 +37,13 @@ def power_vector(v, exp, index_matrix, coeff_matrix, GF):
             result = base[:] if result is None else multiply_vectors(result, base, index_matrix, coeff_matrix, GF)
         base = multiply_vectors(base, base, index_matrix, coeff_matrix, GF)
         n >>= 1
+    return result
+
+def power_vector_slow(v, exp, index_matrix, coeff_matrix, GF):
+    """Медленное возведение в степень (последовательное умножение) — для отладки GF(2^s)."""
+    result = v[:]
+    for _ in range(exp - 1):
+        result = multiply_vectors(result, v, index_matrix, coeff_matrix, GF)
     return result
 
 def multinomial_coeff(combo):
