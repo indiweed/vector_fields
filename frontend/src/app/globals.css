@@ -1,0 +1,332 @@
+/* =========================================
+   БАЗОВЫЕ НАСТРОЙКИ И ПЕРЕМЕННЫЕ
+   ========================================= */
+:root {
+  --bg-main: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  
+  --primary: #2563eb;       /* Синий */
+  --primary-hover: #1d4ed8;
+  --success: #16a34a;       /* Зеленый */
+  --success-hover: #15803d;
+  --danger: #dc2626;        /* Красный */
+  --warning: #d97706;       /* Желтый */
+  --purple: #9333ea;        /* Фиолетовый для расшифровки */
+  --purple-hover: #7e22ce;
+  --dark: #334155;          /* Темно-серый */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   МАКЕТ СТРАНИЦЫ
+   ========================================= */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   ФОРМЫ И ИНПУТЫ
+   ========================================= */
+.grid-params {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--dark);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.presets-container {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.preset-btn {
+  background-color: #f1f5f9;
+  border: 1px solid var(--border-color);
+  color: var(--dark);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.preset-btn:hover {
+  background-color: #e2e8f0;
+}
+
+/* =========================================
+   КНОПКИ
+   ========================================= */
+.btn-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  color: white;
+  transition: opacity 0.2s, transform 0.1s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn:active { transform: scale(0.98); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-dark { background-color: var(--dark); }
+.btn-dark:hover { background-color: #1e293b; }
+.btn-primary { background-color: var(--primary); }
+.btn-primary:hover { background-color: var(--primary-hover); }
+.btn-success { background-color: var(--success); }
+.btn-success:hover { background-color: var(--success-hover); }
+.btn-purple { background-color: var(--purple); }
+.btn-purple:hover { background-color: var(--purple-hover); }
+
+.btn-full {
+  width: 100%;
+}
+
+/* =========================================
+   СПЕЦИАЛЬНЫЕ БЛОКИ (Валидация, Многочлены)
+   ========================================= */
+.error-banner {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: var(--danger);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.check-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.check-item.ok { background-color: #f0fdf4; border-color: #bbf7d0; color: #166534; }
+.check-item.err { background-color: #fef2f2; border-color: #fecaca; color: #991b1b; }
+.check-item.warn { background-color: #fffbeb; border-color: #fde68a; color: #92400e; }
+
+.poly-item {
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.poly-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.poly-math {
+  overflow-x: auto;
+  padding: 4px 0;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: white;
+  border: 1px solid var(--border-color);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.poly-item:hover .copy-btn { opacity: 1; }
+.copy-btn.copied { background: #dcfce7; border-color: #bbf7d0; color: #166534; opacity: 1; }
+
+/* =========================================
+   ШИФРОВАНИЕ / РАСШИФРОВАНИЕ
+   ========================================= */
+.crypto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .crypto-grid { grid-template-columns: 1fr; }
+  .header h1 { font-size: 1.8rem; }
+}
+
+.input-with-btn {
+  display: flex;
+  gap: 8px;
+}
+
+.input-with-btn input {
+  flex: 1;
+  font-family: monospace;
+}
+
+.result-box {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+.result-box.enc { background-color: #eef2ff; border: 1px solid #c7d2fe; color: #3730a3; }
+.result-box.dec { background-color: #faf5ff; border: 1px solid #e9d5ff; color: #6b21a8; }
+
+/* =========================================
+   РЕЗУЛЬТАТЫ ТЕСТА (Round-trip)
+   ========================================= */
+.test-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .test-grid { grid-template-columns: 1fr; }
+}
+
+.test-box {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: #f8fafc;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.test-box-title {
+  font-family: sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.badge.success { background: #dcfce7; color: #166534; }
+.badge.error { background: #fee2e2; color: #991b1b; }
+
+/* Фиксы для формул KaTeX */
+.katex-display { margin: 0; overflow-x: auto; overflow-y: hidden; padding-bottom: 4px; }
+.katex { font-size: 1.1em !important; }
