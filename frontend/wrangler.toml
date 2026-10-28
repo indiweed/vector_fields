@@ -1,6 +1,6 @@
 name = "vector-fields"
 main = ".open-next/worker.js"
-compatibility_date = "2025-03-25"
+compatibility_date = "2025-10-01"
 compatibility_flags = ["nodejs_compat"]
 
 [assets]
