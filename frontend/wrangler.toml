@@ -1,4 +1,4 @@
-name = "vector-fields" # Имя вашего проекта (должно совпадать с package.json)
+name = "vector_fields_frontend"
 main = ".open-next/worker.js"
 compatibility_date = "2025-03-25"
 compatibility_flags = ["nodejs_compat"]
