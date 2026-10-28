@@ -23,9 +23,8 @@ export default function CryptoPanel({ fieldOrder, expectedLength, onEncrypt, onD
 
   return (
     <section className="crypto-grid">
-      {/* Шифрование */}
       <div className="card">
-        <h2 style={{ color: 'var(--primary)' }}>🔒 Шифрование</h2>
+        <h2 style={{ color: 'var(--primary)' }}>Шифрование</h2>
         
         <div className="input-group">
           <label>Вектор X (через запятую)</label>
@@ -51,10 +50,8 @@ export default function CryptoPanel({ fieldOrder, expectedLength, onEncrypt, onD
           </div>
         )}
       </div>
-
-      {/* Расшифрование */}
       <div className="card">
-        <h2 style={{ color: 'var(--purple)' }}>🔓 Расшифрование</h2>
+        <h2 style={{ color: 'var(--purple)' }}>Расшифрование</h2>
         
         <div className="input-group">
           <label>Вектор Y (через запятую)</label>

@@ -103,10 +103,6 @@ export default function Home() {
       />
 
       {test && <RoundTripResult test={test} />}
-      
-      <footer style={{ textAlign: 'center', fontSize: '0.8rem', color: 'var(--text-muted)', padding: '40px 0 20px' }}>
-        Постквантовая криптография · FastAPI + Next.js (Pure CSS)
-      </footer>
     </main>
   );
 }

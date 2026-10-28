@@ -57,13 +57,13 @@ export default function ParameterForm({ params, setParams, onValidate, onGenerat
 
       <div className="btn-actions">
         <button onClick={onValidate} disabled={!!loading} className="btn btn-dark">
-          {loading === 'validate' ? 'Проверка…' : '🔍 Проверить параметры'}
+          {loading === 'validate' ? 'Проверка…' : 'Проверить параметры'}
         </button>
         <button onClick={onGenerate} disabled={!!loading} className="btn btn-primary">
-          {loading === 'generate' ? 'Генерация…' : '⚡ Сгенерировать ключ'}
+          {loading === 'generate' ? 'Генерация…' : 'Сгенерировать ключ'}
         </button>
         <button onClick={onTest} disabled={!!loading} className="btn btn-success">
-          {loading === 'test' ? 'Тест…' : '🏃 Round-trip тест'}
+          {loading === 'test' ? 'Тест…' : 'Тест обратимости'}
         </button>
       </div>
     </section>

@@ -40,8 +40,8 @@ export default function RoundTripResult({ test }: { test: TestResult }) {
       </div>
       
       <div style={{ display: 'flex', gap: '16px', fontSize: '0.85rem', color: 'var(--text-muted)', background: '#f1f5f9', padding: '12px', borderRadius: '8px' }}>
-        <span>⚡ Шифрование: <strong style={{ color: 'var(--text-main)' }}>{test.encrypt_time_ms} мс</strong></span>
-        <span>⏳ Расшифрование: <strong style={{ color: 'var(--text-main)' }}>{test.decrypt_time_ms} мс</strong></span>
+        <span>Шифрование: <strong style={{ color: 'var(--text-main)' }}>{test.encrypt_time_ms} мс</strong></span>
+        <span>Расшифрование: <strong style={{ color: 'var(--text-main)' }}>{test.decrypt_time_ms} мс</strong></span>
       </div>
     </section>
   );

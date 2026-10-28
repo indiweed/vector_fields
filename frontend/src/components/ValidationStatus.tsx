@@ -17,7 +17,6 @@ export default function ValidationStatus({ validation }: { validation: Validatio
           const type = c.warning ? 'warn' : c.ok ? 'ok' : 'err';
           return (
             <li key={i} className={`check-item ${type}`}>
-              <span style={{ fontSize: '1.2rem' }}>{c.warning ? '⚠️' : c.ok ? '✅' : '❌'}</span>
               <div>
                 <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>{c.name}</div>
                 <div style={{ fontSize: '0.8rem', opacity: 0.8 }}>{c.detail}</div>
