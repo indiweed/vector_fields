@@ -1,5 +1,7 @@
 'use client';
 
+export const dynamic = 'force-dynamic';
+
 import { useState } from 'react';
 import ParameterForm, { Params } from '../components/ParameterForm';
 import ValidationStatus, { ValidationResult } from '../components/ValidationStatus';
